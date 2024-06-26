@@ -1,0 +1,4 @@
+ion-tab-bar:not([selected-tab]) {
+  /* Your styles for the selected ion-tab-bar here */
+  display: none;
+}

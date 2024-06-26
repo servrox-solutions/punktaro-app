@@ -1,0 +1,7 @@
+{
+  "name": "Punktaro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
