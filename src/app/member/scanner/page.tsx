@@ -14,8 +14,9 @@ const App: React.FC = () => {
 
   return (
     <div className='h-full'>
-      <div className="w-[90%] max-w-[500px] aspect-square relative">
+      <div className="w-[100%] max-w-[500px] relative">
         <QRScanner onScan={handleScan} />
+        <div className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] h-[90%] aspect-square border-2 border-red"></div>
       </div>
       {qrCodeContent && (
         <div>

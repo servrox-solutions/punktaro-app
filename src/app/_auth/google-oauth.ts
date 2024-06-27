@@ -5,7 +5,7 @@ export const oauthSignIn = (nonce: string): void => {
   // Parameters to pass to OAuth 2.0 endpoint
   var params = {
     'client_id': '855032964499-3p4ps1u1h0g9jassbdg8ua90lpc1oqbb.apps.googleusercontent.com',
-    'redirect_uri': 'http://localhost:3001/auth',
+    'redirect_uri': `${window.location.origin}/auth`,
     'response_type': 'id_token',
     'scope': 'openid',
     'nonce': nonce

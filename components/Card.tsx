@@ -17,7 +17,7 @@ const Card = ({
             <div className="wave"></div>
             <div className="wave"></div>
         </div>
-        <div style={{position: 'inline', zIndex: '10'}}>{children}</div>
+        <div style={{zIndex: '10'}}>{children}</div>
     </div>
 
   );

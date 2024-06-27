@@ -46,7 +46,7 @@ const Wallet: React.FC = () => {
         {
             
             cards.map((card, cardIdx) => {
-                return <div className="relative"><Card color={card.color as any}>
+                return <div className="relative" key={cardIdx}><Card color={card.color as any}>
                     <div className="pl-[120px] ml-5 h-[220px]">
                         <a href="#">
                             <h5 className="mb-2 text-3xl font-semibold tracking-tight text-gray-800 dark:text-white">{card.name}</h5>
@@ -57,7 +57,7 @@ const Wallet: React.FC = () => {
                               <div className="flex gap-3 flex-wrap">
                         {
                             Array.from({ length: 10 }, (_, i) => 
-                                <div className="flex items-center justify-center border-2 border-primary rounded-full w-[36px] h-[36px]">
+                                <div key={i} className="flex items-center justify-center border-2 border-primary rounded-full w-[36px] h-[36px]">
                                     {i < card.stamps && <svg
                                     style={{opacity: 0.5}}
                                     width="100"
