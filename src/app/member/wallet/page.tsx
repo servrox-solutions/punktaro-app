@@ -42,22 +42,22 @@ const Wallet: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full gap-3">
-        <h1 className="my-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl ml-2 lg:text-6xl dark:text-white">Meine Karten</h1>
+        <h1 className="my-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl ml-2 lg:text-6xl dark:text-gray-900">Meine Karten</h1>
         {
             
             cards.map((card, cardIdx) => {
                 return <div className="relative" key={cardIdx}><Card color={card.color as any}>
-                    <div className="pl-[120px] ml-5 h-[220px]">
+                    <div className="py-4 pt-12 ml-5">
                         <a href="#">
-                            <h5 className="mb-2 text-3xl font-semibold tracking-tight text-gray-800 dark:text-white">{card.name}</h5>
+                            <h5 className="mb-2 text-3xl font-semibold tracking-tight text-gray-800 dark:text-gray-800">{card.name}</h5>
                         </a>
-                        <p className="mb-3 pb-[20px] font-normal text-gray-900 dark:text-gray-900">{card.address}</p>
+                        <p className="mb-3 font-normal text-gray-900 dark:text-gray-900">{card.address}</p>
                     </div>
-                    <div className="bg-white/80 absolute top-0 left-0 p-4 h-full w-[120px]">
+                    <div className="bg-white/80 absolute top-0 left-0 p-4 w-full">
                               <div className="flex gap-3 flex-wrap">
                         {
                             Array.from({ length: 10 }, (_, i) => 
-                                <div key={i} className="flex items-center justify-center border-2 border-primary rounded-full w-[36px] h-[36px]">
+                                <div key={i} className="flex items-center justify-center border-2 border-primary rounded-full w-[20px] h-[20px]">
                                     {i < card.stamps && <svg
                                     style={{opacity: 0.5}}
                                     width="100"

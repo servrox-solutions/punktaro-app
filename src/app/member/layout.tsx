@@ -15,7 +15,7 @@ const Layout = ({
   return (
     <Provider store={store}>
       <div className="flex flex-col h-screen bg-background max-h-full">      
-        <header className="w-full fixed flex justify-between items-center p-4 bg-white shadow-md">
+        <header className="w-full fixed flex justify-between items-center p-4 bg-white shadow-md z-50">
           <div className="flex items-center">
             <Logo />
           </div>

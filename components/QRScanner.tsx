@@ -31,7 +31,7 @@ const QRScanner: React.FC<QRScannerProps> = ({ onScan }) => {
 
   return (
     <div className="relative w-full h-full flex justify-center items-center">
-      <video ref={videoRef} className="w-full h-full object-none" />
+      <video ref={videoRef} className="object-none" />
     </div>
   );
 };
