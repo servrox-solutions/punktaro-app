@@ -12,13 +12,13 @@ import { oauthSignIn } from '../_auth/google-oauth';
 import { setEphemeralPrivateKey, setRandomness, setMaxEpoch, setSalt } from '../_store/authSlice';
 import LoginButton from '../../../components/LoginButton';
 import { PersistGate } from 'redux-persist/integration/react';
+import { SUI_API_ENDPOINT } from '../_config/config';
 
 const Login = () => {
     const dispatch = useDispatch<AppDispatch>();
 
     const googleSignIn = async () => {
-        const FULLNODE_URL = 'https://fullnode.devnet.sui.io'; // replace with the RPC URL you want to use
-        const suiClient = new SuiClient({ url: FULLNODE_URL });
+        const suiClient = new SuiClient({ url: SUI_API_ENDPOINT });
         const { epoch } = await suiClient.getLatestSuiSystemState();
 
         const maxEpoch = Number(epoch) + 2; // this means the ephemeral key will be active for 2 epochs from now.
@@ -35,29 +35,27 @@ const Login = () => {
     };
 
   return (
-    <Provider store={store}>
-      <div className="min-h-screen flex items-center justify-center bg-background p-4">
+    <div className="min-h-screen flex items-center justify-center bg-background p-4">
         <div className="bg-card p-8 rounded shadow-md w-full max-w-sm border border-border">
-          <div className="flex justify-center items-center mb-8">
+            <div className="flex justify-center items-center mb-8">
             <Logo />
-          </div>
+            </div>
         <LoginButton icon={{path: '/google-logo.svg', alt: "Google Logo"}} text="Login mit Google" handler={() => googleSignIn()} />
-       
-          <Link href="/member/wallet"
+        
+            <Link href="/member/wallet"
             className="flex items-center justify-start w-full py-4 px-6 mb-4 border border-border rounded bg-white text-textSecondary hover:bg-gray-50"
-          >
+            >
             <img src="/facebook-logo.svg" alt="Facebook" className="w-8 h-8 mr-3" />
             <span className="text-lg">Sign in with Facebook</span>
-          </Link>
-          <Link href="/member/wallet"
+            </Link>
+            <Link href="/member/wallet"
             className="flex items-center justify-start w-full py-4 px-6 border border-border rounded bg-white text-textSecondary hover:bg-gray-50"
-          >
+            >
             <img src="/apple-logo.svg" alt="Apple" className="w-8 h-8 mr-3" />
             <span className="text-lg">Sign in with Apple</span>
-          </Link>
+            </Link>
         </div>
-      </div>
-    </Provider>
+    </div>
   );
 };
 

@@ -1,0 +1,1 @@
+{ "model": "gpt-4-0613", "messages": [ { "role": "user", "content": [ { "type": "text", "text": "You should return a JSON containing all information on this receipt." }, { "type": "image_url", "image_url": { "url": "data:image/jpeg;base64,\"$base64_image\"" } } ] } ], "max_tokens": 300 }

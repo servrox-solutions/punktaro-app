@@ -1,0 +1,1 @@
+export const querySuiBalance = (userAddress: string): Promise<number> => querySuiBalance(userAddress);
