@@ -1,0 +1,7 @@
+{
+    "watch": [
+        "src"
+    ],
+    "ext": "ts",
+    "exec": "concurrently \"npx tsc --watch\" \"node -r ts-node/register --env-file=.dev.env --env-file=.secret.env src/index.ts\""
+}
