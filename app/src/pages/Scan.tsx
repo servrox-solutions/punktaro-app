@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar, useIonToast } from '@ionic/react';
+import React, { useCallback, useRef, useState } from 'react';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, useIonToast } from '@ionic/react';
 import Webcam from 'react-webcam';
 import './Scan.css';
 import { PointToolbar } from '../components/PointToolbar';
@@ -9,7 +9,7 @@ import { AppDispatch, RootState } from '../store/store';
 import { uploadReceipt } from '../scripts/http/uploadReceipt';
 import LoadingSpinner from '../components/LoadingSpinner';
 import CenterContainer from '../components/CenterContainer';
-import { fetchPunktaroBalance, usePunktaroBalance } from '../scripts/sui/use-punktaro-token';
+import { fetchPunktaroBalance } from '../scripts/sui/use-punktaro-token';
 import { setPunktaroBalance } from '../store/userSlice';
 
 const Scan: React.FC = () => {
@@ -52,7 +52,7 @@ const Scan: React.FC = () => {
         showToast('Receipt upload successfull! Added points to your account.');
         fetchPunktaroBalance(userAddress as `0x${string}`).then(balance => dispatch(setPunktaroBalance(balance)));          
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
       showToast('Receipt analaysis failed. Make sure you use a valid receipt as input and the image is not blurry.');
     } finally {
@@ -64,6 +64,7 @@ const Scan: React.FC = () => {
 
   const dataURLtoFile = (dataurl: string, filename: string): File => {
     const arr = dataurl.split(',');
+    // @ts-ignore: @typescript-eslint/no-non-null-assertion
     const mime = arr[0].match(/:(.*?);/)![1];
     const bstr = atob(arr[1]);
     let n = bstr.length;

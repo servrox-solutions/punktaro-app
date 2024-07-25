@@ -1,9 +1,7 @@
-import React, { useTransition } from 'react';
-import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React from 'react';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonContent, IonHeader, IonPage, IonTitle } from '@ionic/react';
 import './Shop.css';
-import { useSelector } from 'react-redux';
 // import { usePunktaroBalance } from '../scripts/sui/use-punktaro-token';
-import { RootState } from '../store/store';
 import { PointToolbar } from '../components/PointToolbar';
 import { useTranslation } from 'react-i18next';
 

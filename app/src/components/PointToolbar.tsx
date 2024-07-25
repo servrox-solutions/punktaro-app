@@ -1,8 +1,7 @@
 import React from 'react';
-import { IonToolbar, IonTitle, IonButton } from '@ionic/react';
+import { IonToolbar, IonButton } from '@ionic/react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/store';
-import { useTranslation } from 'react-i18next';
 
 export interface PointToolbarProps {
     children: React.ReactNode,

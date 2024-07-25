@@ -58,7 +58,7 @@ export const authenticateUser = (token: string) => async (dispatch: AppDispatch,
   });
 };
 
-export const logoutUser = () => async (dispatch: AppDispatch, getState: () => RootState) => {
+export const logoutUser = () => async (dispatch: AppDispatch) => {
   dispatch(clearAuth());
   dispatch(clearUser());
 }

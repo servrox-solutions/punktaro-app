@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { IonContent, IonHeader, IonInput, IonItem, IonLabel, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Home.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { authenticateUser } from '../store/authActions';
@@ -12,16 +12,7 @@ const Auth: React.FC = () => {
     const history = useHistory();
     const dispatch = useDispatch<AppDispatch>();
     const partialZkLoginSignature = useSelector((state: RootState) => state.auth.partialZkLoginSignature);
-    const userAddress = useSelector((state: RootState) => state.auth.userAddress);
 
-    // useEffect(() => {
-    //     const init = async () => {
-    //         const [suiBalance] = await querySuiBalance(userAddress);
-    //         dispatch(setWallet(bonusCards))
-    //         dispatch(setSuiBalance(suiBalance))
-    //     };
-    //     init();
-    // }, [userAddress])
 
 
     useEffect(() => {

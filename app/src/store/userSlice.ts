@@ -1,12 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface StoreBonusCard {
-  name: string;
-  address: string;
-  curStamps: number;
-  maxStamps: number;
-}
-
 // Define the initial state
 interface UserState {
   suiBalance: number;

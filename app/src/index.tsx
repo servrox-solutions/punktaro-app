@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import i18next from "i18next";
 import common_de from "./translations/de/translation.json";
 import { I18nextProvider } from 'react-i18next';
-import { getPlatforms, iosTransitionAnimation, isPlatform, mdTransitionAnimation, setupIonicReact } from '@ionic/react';
+import { isPlatform, setupIonicReact } from '@ionic/react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import store, { persistor } from './store/store';
