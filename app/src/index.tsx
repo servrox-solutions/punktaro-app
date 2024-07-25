@@ -5,6 +5,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import i18next from "i18next";
 import common_de from "./translations/de/translation.json";
+import common_en from "./translations/en/translation.json";
 import { I18nextProvider } from 'react-i18next';
 import { isPlatform, setupIonicReact } from '@ionic/react';
 import { Provider } from 'react-redux';
@@ -13,16 +14,20 @@ import store, { persistor } from './store/store';
 
 i18next.init({
   interpolation: { escapeValue: false },  // React already does escaping
-  lng: 'de',
+  lng: 'en',
   resources: {
     de: {
       translation: common_de
+    },
+    en: {
+      translation: common_en
     }
   }
 });
 
 setupIonicReact({
   mode: isPlatform('ios') ? 'ios' : 'md',
+  
 });
 
 const container = document.getElementById('root');

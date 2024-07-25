@@ -14,26 +14,26 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <PointToolbar pointLabel={t('app.header.points')}>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>{t("app.pages.home.title")}</IonTitle>
         </PointToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonCard>
           <img alt="Punktaro coin" src="/assets/images/coin.png" />
           <IonCardHeader>
-            <IonCardTitle>{balance} Punkte</IonCardTitle>
-            <IonCardSubtitle>Dein Punktestand:</IonCardSubtitle>
+            <IonCardTitle>{balance} {t("app.pages.home.points")}</IonCardTitle>
+            <IonCardSubtitle>{t("app.pages.home.your-points")}</IonCardSubtitle>
           </IonCardHeader>
 
           <IonCardContent>
-            Du kannst durch das Scannen von Kassenbelegen Punkte sammeln und diese gegen tolle Belohnungen eintauschen.
+            {t("app.pages.home.info")}
           </IonCardContent>
 
           <IonButton fill="clear" routerLink='/shop'>
-            Zum Shop
+            {t("app.pages.home.link.shop")}
           </IonButton>
           <IonButton fill="clear" routerLink='/scan'>
-            Scannen
+            {t("app.pages.home.link.scan")}
           </IonButton>
         </IonCard>
       </IonContent>

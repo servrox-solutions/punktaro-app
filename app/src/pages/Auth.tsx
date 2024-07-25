@@ -7,10 +7,12 @@ import { AppDispatch, RootState } from '../store/store';
 import CenterContainer from '../components/CenterContainer';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { useHistory } from 'react-router';
+import { useTranslation } from 'react-i18next';
 
 const Auth: React.FC = () => {
     const history = useHistory();
     const dispatch = useDispatch<AppDispatch>();
+    const {t} = useTranslation();
     const partialZkLoginSignature = useSelector((state: RootState) => state.auth.partialZkLoginSignature);
 
 
@@ -40,7 +42,7 @@ const Auth: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Bitte warten...</IonTitle>
+                    <IonTitle>{t("app.pages.auth.title")}</IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>

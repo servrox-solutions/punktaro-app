@@ -11,10 +11,11 @@ import { oauthSignIn } from '../scripts/auth/google-oauth';
 import CenterContainer from '../components/CenterContainer';
 import Logo from '../components/Logo';
 import LoadingSpinner from '../components/LoadingSpinner';
+import { useTranslation } from 'react-i18next';
 
 const Login: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-
+  const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
   const login = (provider: 'apple' | 'google' | 'facebook') => {
@@ -64,25 +65,25 @@ const Login: React.FC = () => {
               </IonRow>
               <IonRow class="ion-justify-content-start">
                 <IonCol>
-                  <IonButton expand='block' fill='outline' onClick={() => { login('facebook') }}>
-                    <IonIcon slot="start" ios={'/assets/icon/facebook-logo.svg'} md={'/assets/icon/apple-logo.svg'}></IonIcon>
-                    Login mit Facebook
-                  </IonButton>
-                </IonCol>
-              </IonRow>
-              <IonRow class="ion-justify-content-start">
-                <IonCol>
                   <IonButton expand='block' fill='outline' className='ion-margin-vertical' onClick={() => { login('google') }}>
                     <IonIcon slot="start" ios={'/assets/icon/google-logo.svg'} md={'/assets/icon/apple-logo.svg'}></IonIcon>
-                    Login mit Google
+                    {t("app.pages.login.login-google")}
                   </IonButton>
                 </IonCol>
               </IonRow>
               <IonRow class="ion-justify-content-start">
                 <IonCol>
-                  <IonButton expand='block' fill='outline' onClick={() => { login('apple') }}>
+                  <IonButton disabled expand='block' fill='outline' onClick={() => { login('facebook') }}>
+                    <IonIcon slot="start" ios={'/assets/icon/facebook-logo.svg'} md={'/assets/icon/apple-logo.svg'}></IonIcon>
+                    {t("app.pages.login.login-facebook")}
+                  </IonButton>
+                </IonCol>
+              </IonRow>
+              <IonRow class="ion-justify-content-start">
+                <IonCol>
+                  <IonButton disabled expand='block' fill='outline' onClick={() => { login('apple') }}>
                     <IonIcon slot="start" ios={'/assets/icon/apple-logo.svg'} md={'/assets/icon/apple-logo.svg'}></IonIcon>
-                    Login mit Apple
+                    {t("app.pages.login.login-apple")}
                   </IonButton>
                 </IonCol>
               </IonRow>

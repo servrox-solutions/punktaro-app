@@ -98,7 +98,7 @@ const Scan: React.FC = () => {
         <IonButton expand="block"
           onClick={() => capture()}
           style={{ position: 'fixed', bottom: '10px', left: '5%', width: '90%', zIndex: 100 }}>
-          Screenshot
+          {t("app.pages.scan.button.photo")}
         </IonButton>
       </>
     )
@@ -112,12 +112,12 @@ const Scan: React.FC = () => {
         <IonButton expand="block"
           onClick={() => handleUpload()}
           style={{ position: 'fixed', bottom: '10px', left: '5%', width: '45%', zIndex: 100 }}>
-          Upload
+          {t("app.pages.scan.button.submit")}
         </IonButton>
         <IonButton expand="block"
           onClick={() => setImageSrc(null)}
           style={{ position: 'fixed', bottom: '10px', left: '50%', width: '45%', zIndex: 100 }}>
-          Clear
+          {t("app.pages.scan.button.redo")}
         </IonButton>
       </>
     )
@@ -128,7 +128,7 @@ const Scan: React.FC = () => {
     <IonPage>
       <IonHeader>
         <PointToolbar pointLabel={t('app.header.points')}>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>{t("app.pages.scan.title")}</IonTitle>
         </PointToolbar>
       </IonHeader>
       <IonContent fullscreen style={{ position: 'relative', overflow: 'hidden' }}>

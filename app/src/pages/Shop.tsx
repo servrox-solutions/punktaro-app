@@ -12,36 +12,34 @@ const Shop: React.FC = () => {
     <IonPage>
       <IonHeader>
         <PointToolbar pointLabel={t('app.header.points')}>
-          <IonTitle>Home</IonTitle>
+          <IonTitle>{t("app.pages.shop.title")}</IonTitle>
         </PointToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonCard>
           <IonCardHeader>
-            <IonCardTitle>Direkt aufs Konto</IonCardTitle>
-            <IonCardSubtitle>Auszahlung</IonCardSubtitle>
+            <IonCardTitle>{t("app.pages.shop.bank-account.headline")}</IonCardTitle>
+            <IonCardSubtitle>{t("app.pages.shop.bank-account.subtitle")}</IonCardSubtitle>
           </IonCardHeader>
 
           <IonCardContent>
-            Tausche heute deine Punkte gegen echtes Geld ein. Du erhälst die Belohnung innerhalb von 7 Werktagen direkt auf dein Konto.
-            Auszahlungen sind ab einem Betrag von 2€ möglich.
+            {t("app.pages.shop.bank-account.info")}
           </IonCardContent>
 
-          <IonButton expand="block" className="ion-margin">Punkte auszahlen</IonButton>
+          <IonButton disabled expand="block" className="ion-margin">{t("app.pages.shop.bank-account.submit")}</IonButton>
         </IonCard>
 
         <IonCard>
           <IonCardHeader>
-            <IonCardTitle>Tu was Gutes!</IonCardTitle>
-            <IonCardSubtitle>Spende</IonCardSubtitle>
+            <IonCardTitle>{t("app.pages.shop.donate.headline")}</IonCardTitle>
+            <IonCardSubtitle>{t("app.pages.shop.donate.subtitle")}</IonCardSubtitle>
           </IonCardHeader>
 
           <IonCardContent>
-            Spende deine Punkte und tue damit etwas gutes! Wir leiten das Geld für deine Punkte direkt an die Tierschutzorganisation weiter.
-            Spenden sind ab einem Betrag von 2€ möglich.
+            {t("app.pages.shop.donate.info")}
           </IonCardContent>
 
-          <IonButton expand="block" className="ion-margin" fill="outline" color="secondary">Punkte spenden</IonButton>
+          <IonButton disabled expand="block" className="ion-margin" fill="outline" color="secondary">{t("app.pages.shop.donate.submit")}</IonButton>
         </IonCard>
       </IonContent>
     </IonPage>

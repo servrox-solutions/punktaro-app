@@ -15,6 +15,7 @@ import { cashOutline, homeOutline, personOutline, scanOutline } from 'ionicons/i
 import { usePunktaroBalance } from './scripts/sui/use-punktaro-token';
 import { setPunktaroBalance } from './store/userSlice';
 import { AppDispatch } from './store/store';
+import { useTranslation } from "react-i18next";
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import Scan from './pages/Scan';
@@ -36,7 +37,7 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
-import { useTranslation } from "react-i18next";
+
 
 /* Custom CSS */
 import "./App.css";
