@@ -29,7 +29,7 @@ export function uploadReceipt(file: File, account: string): Promise<UploadReceip
     formData.set('receipt', file, 'receipt.jpg');
     formData.set('account', account);
 
-    return fetch('http://localhost:3000/addreceipt', {
+    return fetch(`${process.env.REACT_APP_BACKEND_API_ENDPOINT}/addreceipt`, {
         method: "POST",
         body: formData
     }).then(response => response.json() as Promise<UploadReceiptResponse>);
